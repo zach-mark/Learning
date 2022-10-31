@@ -71,7 +71,29 @@ def brute_climber(n):
     
     print("Input = ",n)
     print("Output = ",z)
-    print("Explanation: there are ",z," ways to climb to the top")
-    for route in routes:
-        print(route)
+
+def top_down(n):
+    """
+    base cases:
+        f(0)=1
+        f(1)=1
+        
+        
+    
+    
+    """
+    
+    step_list=[1,1]
+    for i in range(2, n+1):
+        step_list.append(step_list[-1]+step_list[-2])
+        
+    
+    print(step_list)
+    x=step_list[-1]
+        
+        
+        
+    print("Input = ",n)
+    print("Output = ",x)
+    
     
