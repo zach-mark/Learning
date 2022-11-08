@@ -64,3 +64,57 @@ means any character, except for new line
 
 """
 
+atRegex=re.compile(r'.at')
+
+match_list= atRegex.findall("The cat in the hat sat on the flat mat after he fled the bat.")
+
+print(match_list)
+
+
+"""
+Dot Star
+.* basically means anything
+"""
+
+stringy='First Name: Zach, Last Name: Mark'
+nameRegex=re.compile(r'First Name: (.*), Last Name: (.*)')
+
+listy=nameRegex.findall(stringy)
+print(listy)
+#that's very usefull.
+
+#dot star is always greedy
+#to use it non greedy, use a question mark after the .*:
+    
+#.*?
+serve='<To serve humans> for dinner.>'
+nongreedy= re.compile(r'<(.*?)>')
+print(nongreedy.findall(serve))
+
+greedy=  re.compile(r'<(.*)>')
+print(greedy.findall(serve))
+
+
+prime="""Serve the public trust.
+Protect the innocent.
+Uphold the law."""
+
+
+dotStar=re.compile(r'.*')
+
+print(dotStar.search(prime))
+#this will only print the first line.
+
+dotStar=re.compile(r'.*', re.DOTALL)
+#compiling this way makes the dot apply to truly everything.
+
+print(dotStar.search(prime))
+
+
+#case insensative
+vowelRegex = re.compile(r'[aeiouy]', re.I)
+
+print(vowelRegex.findall('Al, why does your programming book talk about RoboCop so much?'))
+
+
+
